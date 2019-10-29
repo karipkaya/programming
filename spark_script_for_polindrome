@@ -1,0 +1,16 @@
+val fname= "inputfile.txt"
+
+val foutname="outputfile.txt"
+
+sc.textFile(fname).flatMap(line=> line.split("\\W+")).filter(word=>{
+       var left = 0; 
+       var right = word.length-1;
+       var cnt=true;
+       while(left<right&&cnt){
+        if(word.charAt(left)!=word.charAt(right)){cnt=false}
+         else {
+          left=left+1
+          right=right-1
+        cnt=true
+      }}
+      cnt}).saveAsTextFile(foutname)
