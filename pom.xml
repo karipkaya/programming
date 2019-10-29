@@ -1,0 +1,45 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>hadoop_polindrome_finder</groupId>
+  <artifactId>hadoop_polindrome_finder</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>polindromefinder</name>
+  <build>
+    <sourceDirectory>src</sourceDirectory>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.0</version>
+        <configuration>
+          <release>9</release>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+ 
+ <packaging>jar</packaging>
+
+	<properties>
+		<jdk.version>1.7</jdk.version>
+		<junit.version>4.12</junit.version>
+	</properties>
+ 
+ 
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.12</version>
+      <scope>test</scope>
+    </dependency>
+    
+	<dependency>
+	    <groupId>org.apache.hadoop</groupId>
+	    <artifactId>hadoop-client</artifactId>
+	    <version>3.2.1</version>
+	</dependency>
+  
+  </dependencies>
+  
+  
+</project>
