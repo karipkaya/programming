@@ -1,0 +1,45 @@
+package com.devexpert.puzzles.sentencereverse;
+
+public class SentenceReverse {
+	
+	public static String reverseOne(String input){
+		StringBuilder output =new StringBuilder();
+
+		int oldStrEnd   = input.length();
+		int currentStrEnd   = input.length();
+		int currentStrStart = input.length();
+		int i=input.length()-1;
+		
+		while(i>0) {
+				
+	    		while(!input.substring(i,i+1).matches("\\w") && i>0) i--;
+	    		currentStrEnd =i+1;
+	    		
+	    		if(oldStrEnd>currentStrEnd) {
+	    			output.append(input.substring(currentStrEnd, oldStrEnd));
+	    			oldStrEnd = currentStrEnd;
+	    		}
+	    		
+	    		while(input.substring(i,i+1).matches("\\w") && i>0) i--;
+	    		currentStrStart = i>0?i+1:i; 
+	    		
+	    		
+		    	if(currentStrEnd>currentStrStart) {
+		    		output.append(input.substring(currentStrStart, currentStrEnd));
+		    		currentStrEnd =currentStrStart -1;
+		    		oldStrEnd = currentStrEnd+1;
+		    	}
+		    }
+		
+		return output.toString();
+	}
+	
+	public static void main(String [] args) {
+		String str = ",,,,,,ali veli.maria        ,";
+		
+		System.out.println(str);
+		System.out.println(reverseOne(str));
+		System.out.println(str.length());
+		System.out.println(reverseOne(str).length());
+	}
+}
